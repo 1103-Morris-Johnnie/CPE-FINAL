@@ -36,7 +36,7 @@ This project demonstrates an evaporative cooling system (swamp cooler) implement
 
 ## Project Files
 - **Code**: [swamp_cooler.ino](#)
-- **Technical Documentation**: [Link to PDF](#)
+- **Technical Documentation**: [https://github.com/1103-Morris-Johnnie/CPE-FINAL/blob/main/Swamp%20Cooler%20Project_%20Technical%20Documentation.pdf](#)
 - **Demonstration Video**: [Link to Video](#)
 - **Schematic and Images**: [Link to Schematic](#)
 
@@ -50,11 +50,4 @@ This project demonstrates an evaporative cooling system (swamp cooler) implement
 - Leveraging serial communication for debugging and as a fallback solution.
 
 ## Contributors
-- [Johnnie Morris]
-
-## License
-This project is licensed under the [MIT License](LICENSE).
-
-## Acknowledgments
-- University of Nevada, Reno - CPE 301 Embedded System Design Course.
-- Lab instructors and teammates for their guidance and support.
+- Johnnie Morris
