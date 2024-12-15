@@ -35,10 +35,10 @@ This project demonstrates an evaporative cooling system (swamp cooler) implement
 4. Monitor stats and logs via the serial monitor.
 
 ## Project Files
-- **Code**: [swamp_cooler.ino](#)
+- **Code**: [swamp_cooler.ino](https://github.com/1103-Morris-Johnnie/CPE-FINAL/blob/main/final.ino)
 - **Technical Documentation**: [Link to PDF](https://github.com/1103-Morris-Johnnie/CPE-FINAL/blob/main/Swamp%20Cooler%20Project_%20Technical%20Documentation.pdf)
-- **Demonstration Video**: [Link to Video](#)
-- **Schematic and Images**: [Link to Schematic](#)
+- **Demonstration Video**: UPLOAD THROUGH WEBCAMPUS
+- **Schematic and Images**: [IMAGE 1](https://github.com/1103-Morris-Johnnie/CPE-FINAL/blob/main/image%201.jpg)  [IMAGE 2](https://github.com/1103-Morris-Johnnie/CPE-FINAL/blob/main/image%202.png)
 
 ## Notes
 - Due to a damaged LCD, all outputs are redirected to the serial monitor for this project.
