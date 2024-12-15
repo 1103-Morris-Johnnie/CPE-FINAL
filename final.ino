@@ -90,7 +90,7 @@ void handleIdleState() {
   digitalWrite(LED_GREEN, HIGH);
   digitalWrite(LED_RED, LOW);
   digitalWrite(LED_BLUE, LOW);
-
+  delay(3000);
   float temp = dht.readTemperature();
   float humidity = dht.readHumidity();
   int waterLevel = analogRead(WATER_SENSOR_PIN);
@@ -111,12 +111,7 @@ void handleIdleState() {
   lcd.print(humidity);
   lcd.print("%");
 
-  if (waterLevel < 50) {
-    waterLow = true;
-    currentState = ERROR;
-    logEvent("1.5");
-    Serial.println("Error: Water Level Low");
-  }
+
 
   if (temp > tempThresholdHigh) {
     currentState = RUNNING;
@@ -128,6 +123,12 @@ void handleIdleState() {
     currentState = DISABLED;
     logEvent("Transition to DISABLED");
     Serial.println("Transition to DISABLED");
+  }
+    if (waterLevel < 50) {
+    waterLow = true;
+    currentState = ERROR;
+    logEvent("1.5");
+    Serial.println("Error: Water Level Low");
   }
 }
 
@@ -142,21 +143,39 @@ void handleErrorState() {
   lcd.clear();
   lcd.print("Error: Water Low");
 
-  if (digitalRead(RESET_BUTTON_PIN) == HIGH) {
-      waterLow = false;
-      currentState = IDLE;
-      logEvent("Transition to IDLE");
-      Serial.println("Transition to IDLE (Reset)");
-      digitalWrite(LED_RED, LOW);
-  }
+
 
   int waterLevel = analogRead(WATER_SENSOR_PIN);
   if (waterLevel > 50) {
       waterLow = false;
       currentState = IDLE;
       logEvent("Transition to IDLE");
-      Serial.println("Transition to IDLE (Reset)");
+      Serial.println("Low Water");
       digitalWrite(LED_RED, LOW);
+  }
+
+  if (waterLevel < 50) {
+    waterLow = true;
+    currentState = ERROR;
+    logEvent("Transition to ERROR");
+    Serial.println("Error: Water Level Low");
+    Serial.print("Water level: ");
+    Serial.println(waterLevel);
+  }
+
+    if (digitalRead(RESET_BUTTON_PIN) == HIGH) {
+      waterLow = false;
+      currentState = IDLE;
+      logEvent("Transition to IDLE");
+      Serial.println("Transition to IDLE (Reset)");
+
+  }
+  if (digitalRead(STOP_BUTTON_PIN) == HIGH) {
+      waterLow = false;
+      currentState = DISABLED;
+      logEvent("Transition to DISABLED");
+      Serial.println("Transition to DISABLED (STOP)");
+
   }
 }
 
@@ -178,6 +197,7 @@ void handleRunningState() {
 
   if (temp < tempThresholdLow) {
     currentState = IDLE;
+    digitalWrite(FAN_PIN, LOW);
     logEvent("Transition to IDLE");
     Serial.println("Transition to IDLE (Temperature too low)");
   }
@@ -188,9 +208,20 @@ void handleRunningState() {
   if (waterLevel < 50) {
     waterLow = true;
     currentState = ERROR;
+    digitalWrite(FAN_PIN, LOW);
     logEvent("Transition to ERROR");
     Serial.println("Error: Water Level Low (During Running)");
   }
+
+    if (digitalRead(STOP_BUTTON_PIN) == HIGH) {
+      waterLow = false;
+      currentState = DISABLED;
+      digitalWrite(FAN_PIN, LOW);
+      logEvent("Transition to DISABLED");
+      Serial.println("Transition to DISABLED");
+
+  }
+
 }
 
 void logEvent(String event) {
