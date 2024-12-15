@@ -36,7 +36,7 @@ This project demonstrates an evaporative cooling system (swamp cooler) implement
 
 ## Project Files
 - **Code**: [swamp_cooler.ino](#)
-- **Technical Documentation**: [https://github.com/1103-Morris-Johnnie/CPE-FINAL/blob/main/Swamp%20Cooler%20Project_%20Technical%20Documentation.pdf](#)
+- **Technical Documentation**: [Link to PDF](https://github.com/1103-Morris-Johnnie/CPE-FINAL/blob/main/Swamp%20Cooler%20Project_%20Technical%20Documentation.pdf)
 - **Demonstration Video**: [Link to Video](#)
 - **Schematic and Images**: [Link to Schematic](#)
 
