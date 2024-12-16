@@ -26,10 +26,6 @@ This project demonstrates an evaporative cooling system (swamp cooler) implement
 11. **9V Battery**: Supplies portable power to the Arduino and supporting peripherals.
 
 
-
-
-
-
 ## System States
 1. **DISABLED**: Initial state, no sensors active; transitions to IDLE with the START button.
 2. **IDLE**: Monitors environmental conditions; transitions to RUNNING or ERROR based on conditions.
