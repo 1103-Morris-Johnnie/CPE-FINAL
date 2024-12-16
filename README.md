@@ -21,6 +21,14 @@ This project demonstrates an evaporative cooling system (swamp cooler) implement
 6. **16x2 LCD Display**: For displaying stats (LCD non-functional in this project; serial monitor used as a substitute).
 7. **LEDs**: Indicate the current system state.
 8. **Push Buttons**: For START, STOP, and RESET operations.
+9. **Wires**: Various jumper wires for reliable electrical connections between components.
+10. **Resistors**: Used to limit current flow (e.g., 220Ω and 330Ω for LEDs).
+11. **9V Battery**: Supplies portable power to the Arduino and supporting peripherals.
+
+
+
+
+
 
 ## System States
 1. **DISABLED**: Initial state, no sensors active; transitions to IDLE with the START button.
