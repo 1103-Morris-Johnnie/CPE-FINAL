@@ -33,7 +33,7 @@ This project demonstrates an evaporative cooling system (swamp cooler) implement
 4. **ERROR**: Indicates system issues (e.g., low water level); requires RESET to recover.
 
 ## How to Use
-1. Connect all components as described in the [schematic](#).
+1. Connect all components as described in the [schematic](https://github.com/1103-Morris-Johnnie/CPE-FINAL/blob/main/Schematic.md).
 2. Upload the code from this repository to the Arduino Mega 2560.
 3. Power on the system and use the START button to enable it.
 4. Monitor stats and logs via the serial monitor.
