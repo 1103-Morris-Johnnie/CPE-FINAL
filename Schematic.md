@@ -89,4 +89,4 @@ The Arduino Mega is the central controller for the project.
 
 ## Power Rails
 - Use the breadboard’s **positive rail** for 5V connections and **ground rail** for GND connections.
-- For components like the **fan motor**, use a separate external power source to avoid overloading the Arduino.
+- For components like the **fan motor**, make sure to connect a separate external power source Arduino to avoid overloading the Arduino.
